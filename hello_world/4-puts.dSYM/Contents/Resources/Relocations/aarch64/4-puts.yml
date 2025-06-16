@@ -1,0 +1,5 @@
+---
+triple:          'arm64-apple-darwin'
+binary-path:     '/Users/nicolaicarabet/Documents/HolbertonEtude/holbertonschool-low_level_programming-1/hello_world/4-puts'
+relocations:     []
+...
