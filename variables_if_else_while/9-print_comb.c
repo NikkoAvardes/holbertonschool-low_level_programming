@@ -2,7 +2,7 @@
 /**
 * main - Entry point
 *
-* Rerurn: Always 0 (Success)
+* Return: Always 0 (Success)
 *
 */
 int main(void)
@@ -17,5 +17,6 @@ putchar(',');
 putchar(' ');
 }
 }
+putchar('\n');
 return (0);
 }
