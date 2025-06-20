@@ -7,25 +7,35 @@
  */
 void times_table(void)
 {
-int i, j, product;
+int i, j, p;
+
 for (i = 0; i < 10; i++)
 {
 for (j = 0; j < 10; j++)
 {
-product = i * j;
+p = i * j;
+
 if (j == 0)
 {
-printf("%d", product);
+_putchar('0');
 }
 else
 {
-printf(", %2d", product);
-}
-}
-if (i < 9)
+_putchar(',');
+_putchar(' ');
+
+if (p < 10)
 {
-printf("\n");
+_putchar(' ');
+_putchar(p + '0');
+}
+else
+{
+_putchar((p / 10) + '0');
+_putchar((p % 10) + '0');
 }
 }
-printf("\n");
+}
+_putchar('\n');
+}
 }
