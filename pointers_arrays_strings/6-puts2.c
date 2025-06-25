@@ -14,7 +14,7 @@ int i;
 int len = strlen(str);
 for (i = 0; i < len; i += 2)
 {
-printf("%c", str[i]);
+write(1, &str[i], 1);
 }
-printf("\n");
+write(1, "\n", 1);
 }
