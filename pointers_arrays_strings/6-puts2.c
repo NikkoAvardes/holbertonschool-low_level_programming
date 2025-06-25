@@ -1,7 +1,5 @@
 #include "main.h"
 #include <unistd.h>
-#include <string.h>
-#include <stdio.h>
 /**
  * puts2 - prints every other character of a string
  * @str: string to print
@@ -10,11 +8,13 @@
  */
 void puts2(char *str)
 {
-int i;
-int len = strlen(str);
-for (i = 0; i < len; i += 2)
+int i = 0;
+while (str[i] != '\0')
 {
+if (i % 2 == 0)
 write(1, &str[i], 1);
+i++;
 }
 write(1, "\n", 1);
 }
+
