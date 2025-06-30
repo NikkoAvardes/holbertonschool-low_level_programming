@@ -9,29 +9,20 @@
 char *leet(char *str)
 {
 int i = 0;
+int j = 0;
+char *ltr = "aeotlAEOTL";
+char *rplc = "4307143071";
 while (str[i] != '\0')
 {
-if (str[i] == 'a' || str[i] == 'A')
+j = 0;
+while (ltr[j] != '\0')
 {
-str[i] = '4';
-}
-else if (str[i] == 'e' || str[i] == 'E')
-{
-str[i] = '3';
-}
-else if (str[i] == 'o' || str[i] == 'O')
-{
-str[i] = '0';
-}
-else if (str[i] == 't' || str[i] == 'T')
-{
-str[i] = '7';
-}
-else if (str[i] == 'l' || str[i] == 'L')
-{
-str[i] = '1';
+if (str[i] == ltr[j])
+str[i] = rplc[j];
+j++;
 }
 i++;
 }
+
 return (str);
 }
