@@ -9,7 +9,17 @@
  */
 int is_prime_number(int n)
 {
-int i = 2;
+return (helper(n, 2));
+}
+/**
+ * helper - a helper function to check if a number is prime
+ * @n: the number to check
+ * @i: the current divisor
+ *
+ * Return: 1 if n is prime, 0 otherwise
+ */
+int helper(int n, int i)
+{
 if (n <= 1)
 {
 return (0);
