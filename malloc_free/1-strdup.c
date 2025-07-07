@@ -18,7 +18,8 @@ int i;
 if (str == NULL)
 return (NULL);
 
-length = strlen(str);
+while (str[length] != '\0')
+length++;
 
 cpy = malloc(sizeof(char) * (length + 1));
 
