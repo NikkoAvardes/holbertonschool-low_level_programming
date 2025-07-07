@@ -3,6 +3,9 @@
 #include <stdlib.h>
 int _atoi(char *s)
 {
-    while (*s == '\n' || *s == ' ' || *s == '\r') s++;
-    
+    while (*s != '\0')
+    {
+        if (*s == '0' && *s == '9')
+        s++;
+    }
 }
