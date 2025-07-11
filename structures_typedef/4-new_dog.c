@@ -34,10 +34,7 @@ dog_t *new_dog(char *name, float age, char *owner)
 		free(my_dog);
 		return (NULL);
 	}
-	while (name[name_len] != '\0')
-	{
-		name_len++;
-	}
+	strcpy(my_dog->name, name);
 	my_dog->owner = malloc(strlen(owner) + 1);
 	if (my_dog->owner == NULL)
 	{
@@ -45,10 +42,7 @@ dog_t *new_dog(char *name, float age, char *owner)
 		free(my_dog);
 		return (NULL);
 	}
-	while (owner[owner_len] != '\0')
-	{
-		owner_len++;
-	}
+	strcpy(my_dog->owner, owner);
 	my_dog->age = age;
 	return (my_dog);
 }
