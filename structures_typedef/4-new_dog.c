@@ -7,45 +7,48 @@
  * @name: name of the dog
  * @age: age of the dog
  * @owner: owner of the dog
- *
  * Return: pointer to the new dog, or NULL if it fails
  */
 dog_t *new_dog(char *name, float age, char *owner)
 {
-	dog_t *Dog;
-	int i = 0;
-	int j = 0;
+	dog_t *my_dog;
+	int name_len = 0;
+	int owner_len = 0;
 
-	Dog = malloc(sizeof(dog_t));
-	if (Dog == NULL)
+	while (name[name_len] != '\0')
+	{
+		name_len++;
+	}
+	while (owner[owner_len] != '\0')
+	{
+		owner_len++;
+	}
+	my_dog = malloc(sizeof(dog_t));
+	if (my_dog == NULL)
 	{
 		return (NULL);
 	}
-
-	Dog->name = malloc(strlen(name) + 1);
-	if (Dog->name == NULL)
+	my_dog->name = malloc(strlen(name) + 1);
+	if (my_dog->name == NULL)
 	{
-		free(Dog);
+		free(my_dog);
 		return (NULL);
 	}
-
-	Dog->owner = malloc(strlen(owner) + 1);
-	if (Dog->owner == NULL)
+	while (name[name_len] != '\0')
 	{
-		free(Dog);
+		name_len++;
+	}
+	my_dog->owner = malloc(strlen(owner) + 1);
+	if (my_dog->owner == NULL)
+	{
+		free(my_dog->name);
+		free(my_dog);
 		return (NULL);
 	}
-	while (name[i] != '\0')
+	while (owner[owner_len] != '\0')
 	{
-		Dog->name[i] = name[i];
-		i++;
+		owner_len++;
 	}
-	while (owner[j] != '\0')
-	{
-		Dog->owner[j] = owner[j];
-		j++;
-	}
-	Dog->age = age;
-
-	return (Dog);
+	my_dog->age = age;
+	return (my_dog);
 }
