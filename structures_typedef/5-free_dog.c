@@ -1,7 +1,8 @@
 #include <stdio.h>
 #include "dog.h"
 #include <stdlib.h>
-/** * free_dog - frees memory allocated for a dog structure
+/**
+ * free_dog - frees memory allocated for a dog structure
  * @d: pointer to the dog structure to free
  *
  * Description: This function frees the memory allocated for the name and owner
