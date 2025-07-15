@@ -2,7 +2,7 @@
 #include "3-calc.h"
 #include <limits.h>
 #include <stdlib.h>
-/** 
+/**
  * op_add - Adds two integers.
  * @a: The first integer.
  * @b: The second integer.
@@ -11,9 +11,9 @@
  */
 int op_add(int a, int b)
 {
-    return (a + b);
+	return (a + b);
 }
-/** 
+/**
  * op_sub - Subtracts two integers.
  * @a: The first integer.
  * @b: The second integer.
@@ -22,7 +22,7 @@ int op_add(int a, int b)
  */
 int op_sub(int a, int b)
 {
-    return (a - b);
+	return (a - b);
 }
 /**
  * op_mul - Multiplies two integers.
@@ -33,7 +33,7 @@ int op_sub(int a, int b)
  */
 int op_mul(int a, int b)
 {
-    return (a * b);
+	return (a * b);
 }
 /**
  * op_div - Divides two integers.
@@ -44,7 +44,7 @@ int op_mul(int a, int b)
  */
 int op_div(int a, int b)
 {
-    return (a / b);
+	return (a / b);
 }
 /**
  * op_mod - Computes the remainder of the division of two integers.
@@ -55,5 +55,5 @@ int op_div(int a, int b)
  */
 int op_mod(int a, int b)
 {
-    return (a % b);
+	return (a % b);
 }
