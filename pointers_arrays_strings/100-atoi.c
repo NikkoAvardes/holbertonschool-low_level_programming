@@ -20,8 +20,10 @@ int _atoi(char *s)
 			break;
 			}
 		else if (found_digit)
+		{
 			break;
-			i++;
+		}
+		i++;
 	}
 	if (!found_digit)
 		return (0);
