@@ -3,7 +3,12 @@
 /**
  * _atoi - Converts a string to an integer.
  * @s: The string to convert.
- *
+ * This function handles leading whitespace, optional signs,
+ * and converts the first sequence of digits found in the string.
+ * It stops processing when it encounters a non-digit character after
+ * the initial digits.
+ * If no digits are found, it returns 0.
+ * If the number  it returns INT_MAX or INT_MIN.
  * Return: The converted integer, or 0 if no digits are found.
  */
 int _atoi(char *s)
