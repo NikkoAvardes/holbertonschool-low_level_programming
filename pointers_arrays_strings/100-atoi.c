@@ -33,7 +33,6 @@ return (0);
 while (s[i] >= '0' && s[i] <= '9')
 {
 found_digit = s[i] - '0';
-
 if (sign == 1)
 {
 if (result > (INT_MAX - found_digit) / 10)
@@ -44,10 +43,8 @@ else
 if (result > (-(INT_MIN + found_digit)) / 10)
 return (INT_MIN);
 }
-
 result = result * 10 + found_digit;
 i++;
 }
-
-return (result * sign);
+return (result *sign);
 }
