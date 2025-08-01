@@ -6,6 +6,21 @@
 #include <sys/stat.h>
 #include <string.h>
 /**
+ * close_fd - Closes a file descriptor and handles errors.
+ * @fd: The file descriptor to close.
+ *
+ * If closing the file descriptor fails, it prints an error message
+ * and exits the program with status code 100.
+ */
+void close_fd(int fd)
+{
+	if (close(fd) == -1)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd);
+		exit(100);
+	}
+}
+/**
  * main - Copies the contents of one file to another.
  * This program prompts the user for the names of
  * opens the source file for reading, and the destination file for writing.
@@ -21,15 +36,23 @@ int main(void)
 	char filename[100];
 	int c;
 
+	printf("Enter the filename to open for reading: ");
+	scanf("%s", filename);
+
 	fptr1 = fopen(filename, "r");
 	if (fptr1 == NULL)
 	{
+		printf("Cannot open file %s\n", filename);
 		exit(1);
 	}
+
+	printf("Enter the filename to open for writing: ");
+	scanf("%s", filename);
 
 	fptr2 = fopen(filename, "w");
 	if (fptr2 == NULL)
 	{
+		printf("Cannot open file %s\n", filename);
 		exit(1);
 	}
 
@@ -37,6 +60,8 @@ int main(void)
 	{
 		fputc(c, fptr2);
 	}
+
+	printf("Contents copied to %s\n", filename);
 
 	fclose(fptr1);
 	fclose(fptr2);
