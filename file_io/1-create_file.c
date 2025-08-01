@@ -26,17 +26,19 @@ if (text_content != NULL)
 	text_len = strlen(text_content);
 }
 
-fd = open(filename, O_CREAT | O_RDWR | O_TRUNC | S_IRUSR | S_IWUSR);
+fd = open(filename, O_CREAT | O_RDWR | O_TRUNC, S_IRUSR | S_IWUSR);
 
 if (fd == -1)
 	return (-1);
 
-bytesWritten = write(fd, text_content, text_len);
-
+if (text_content != NULL)
+{
+	bytesWritten = write(fd, text_content, text_len);
 if (bytesWritten == -1)
 {
 	close(fd);
 	return (-1);
+}
 }
 close(fd);
 return (-1);
